@@ -1,0 +1,267 @@
+{
+  "Uuid": "9c7eae24-ee40-42f1-8ea2-65ace28ea652",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "Remove_Revision_In_Sheet",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "DSRevitNodesUI.RevitRevisions, DSRevitNodesUI",
+      "SelectedIndex": 0,
+      "SelectedString": "Seq. 1 - CONTAINMENT",
+      "NodeType": "ExtensionNode",
+      "Id": "18501cb6fb2a4020a504fc0c2e9c6117",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "63d5b6932836476d96c8183d3dfd5381",
+          "Name": "Revision",
+          "Description": "The selected Revision",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select an existing Revit Revision from the active document."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
+      "SelectedIndex": 490,
+      "SelectedString": "OST_Sheets",
+      "NodeType": "ExtensionNode",
+      "Id": "adb33a3aea154d3ba6e04627a77c0653",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "dfd4920f2e904246a266a445284a108a",
+          "Name": "Category",
+          "Description": "The selected Category.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All built-in categories."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfCategory, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "0e05d86569454579b73b29186f1dc07b",
+      "Inputs": [
+        {
+          "Id": "8b0b46df988147c4869d24611a130446",
+          "Name": "Category",
+          "Description": "The Category",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4449468e4a92416b8f97e6b06c3a0ef9",
+          "Name": "Elements",
+          "Description": "An element type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Get all elements of the specified category from the model."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "NodeType": "BooleanInputNode",
+      "InputValue": true,
+      "Id": "9b3de76414224083a44d277fe1da266f",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "6fc8906a93554579b0d6950449cfeee7",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Selection between a true and false."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "52961270-6b09-462b-8ba6-561422d5a5e0",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "677c0b3292094c05bd2b3d9724900b4e",
+      "Inputs": [
+        {
+          "Id": "58607e0175dc4a6eb578b58c43822bdf",
+          "Name": "_sheet",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "53bb0132dc094102bc75d64f5b79a160",
+          "Name": "_revision",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "dc53dd52a58f480b87a494d253d6e6a6",
+          "Name": "_runIt",
+          "Description": "bool\nDefault value : false",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c4a404c4916c4368a5137910696b31ea",
+          "Name": "_sheet",
+          "Description": "return value",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "This node will remove specified Revisions from a sheet."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "63d5b6932836476d96c8183d3dfd5381",
+      "End": "53bb0132dc094102bc75d64f5b79a160",
+      "Id": "7bb9c910bfbe477ca0c3e3422402fb20"
+    },
+    {
+      "Start": "dfd4920f2e904246a266a445284a108a",
+      "End": "8b0b46df988147c4869d24611a130446",
+      "Id": "551e1b04370242a1b2b88333d3370557"
+    },
+    {
+      "Start": "4449468e4a92416b8f97e6b06c3a0ef9",
+      "End": "58607e0175dc4a6eb578b58c43822bdf",
+      "Id": "5133da54fc9d44ae9e251c1835c6a93d"
+    },
+    {
+      "Start": "6fc8906a93554579b0d6950449cfeee7",
+      "End": "dc53dd52a58f480b87a494d253d6e6a6",
+      "Id": "623bcbbc2f3f474386722d5e8c0ec9df"
+    }
+  ],
+  "Dependencies": [
+    "52961270-6b09-462b-8ba6-561422d5a5e0"
+  ],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "archi-lab.net",
+      "Version": "2022.212.2821",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "677c0b3292094c05bd2b3d9724900b4e"
+      ]
+    }
+  ],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.6.1.8786",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Select Revision",
+        "Id": "18501cb6fb2a4020a504fc0c2e9c6117",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 276.8,
+        "Y": 310.40000000000009
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Categories",
+        "Id": "adb33a3aea154d3ba6e04627a77c0653",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 63.199999999999989,
+        "Y": 127.99999999999994
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "All Elements of Category",
+        "Id": "0e05d86569454579b73b29186f1dc07b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 328.00000000000017,
+        "Y": 151.20000000000002
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Boolean",
+        "Id": "9b3de76414224083a44d277fe1da266f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 374.39999999999992,
+        "Y": 460.80000000000007
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Remove Revision from Sheet",
+        "Id": "677c0b3292094c05bd2b3d9724900b4e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 650.97313517349687,
+        "Y": 217.69976818522156
+      }
+    ],
+    "Annotations": [],
+    "X": 240.7772452960179,
+    "Y": 23.947498788617821,
+    "Zoom": 0.95404292488281262
+  }
+}
